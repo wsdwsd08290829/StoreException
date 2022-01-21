@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "Observer.h"
 
 @interface ViewController ()
 
@@ -16,6 +17,11 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view.
+  for (int i = 0; i < 10; i++) {
+    Observer *o = [[Observer alloc] initWithCount:@(i)];
+    [o subscribe];
+  }
+  [Observer flush];
 }
 
 
